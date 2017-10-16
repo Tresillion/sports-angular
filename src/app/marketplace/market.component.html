@@ -1,0 +1,90 @@
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript:void(0)" routerLink="/payment">My Account</a></li>
+                <li><a href="javascript:void(0)" routerLink="/home" routerLinkActive="active">My Portfolio</a></li>
+                <li class="active"><a href="javascript:void(0)" routerLink="/market">Marketplace</a></li>
+                <li><a href="#">Play</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="container">
+<h2>Marketplacex</h2>
+<table class="table table-hover table-sm"  >
+    <thead class="thead-inverse">
+    <tr>
+        <th style="width: 10%">
+           Id
+        </th>
+        <th style="width: 20%">
+            Player Name
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let share of shares" (click)="onSelect(share)">
+        <td>{{share.id}}</td>
+        <td>{{share.name}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="container"  *ngIf="offers">
+<table class="table table-hover table-sm"  >
+    <thead class="thead-inverse">
+    <tr>
+        <th style="width: 10%">
+           Quantity
+        </th>
+        <th style="width: 10%">
+            Minimum Price
+        </th>
+            <th style="width:20%">
+            Buy Now Price
+        </th>
+                <th style="width: 20%">
+            Offer Expires
+        </th>
+                <th style="width: 20%">
+            Highest Bid
+        </th>
+ 
+        <th style="width: 20%">
+           
+        </th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let offer of offers" >
+        <td>{{offer.quantity}}</td>
+        <td>{{offer.minimumPrice}}</td>
+        <td>{{offer.buyNowPrice}}</td>
+        <td>{{offer.offerEndDate}}</td>
+        <td>{{offer.highestOffer}}</td>
+        <td><button type="submit" class="btn btn-success" (click)="buyNow(offer)">Buy Now</button> </td>
+    </tr>
+    </tbody>
+</table>    
+</div>
+<div class="container"  *ngIf="selectedOffer">
+
+<!--
+<h4>Bid for  {{selectedShare.name}}</h4>
+<form>
+        <div>{{errorMessage}}</div>
+  <div class="form-group">
+    <label for="bidPrice">Bid Price</label>
+    <input class="form-control" name="bidPrice"
+    id="bidPrice" placeholder="Enter Bid Price">
+  </div>
+    <button type="submit"  
+      class="btn btn-success">Bid</button>
+          <button type="submit" 
+      class="btn btn-success">Buy Now</button>
+</form>-->
+</div>
+
+
+

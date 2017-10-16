@@ -1,0 +1,104 @@
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="#">My Account</a></li>
+                <li class="active"><a href="javascript:void(0)" routerLink="/home" routerLinkActive="active">My Portfolio</a></li>
+                <li ><a href="javascript:void(0)" routerLink="/market">Marketplace</a></li>
+                <li><a href="#">Play</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="container">
+<h2>My Portfolio</h2>
+
+</div>
+<div class="container" *ngIf="loggedInAccount">
+<!--<table class="table table-striped" [loggedInAccount.shareholdings]="data" #mf="mfDataTable" [mfRowsOnPage]="5">-->
+<br />
+<h4>Shareholdings</h4>
+<table class="table table-hover table-sm"  >
+    <thead class="thead-inverse">
+    <tr>
+        <th style="width: 10%">
+           Id
+        </th>
+        <th style="width: 20%">
+            Player Name
+        </th>
+        <th style="width: 50%">
+            Shares Held
+        </th>
+        <th style="width: 10%">
+            Value
+        </th>
+        <th style="width: 10%">
+           
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of loggedInAccount.shareholdings" (click)="onSelect(item)">
+        <td>{{item.id}}</td>
+        <td>{{item.share.name}}</td>
+        <td >{{item.quantity}}</td>
+        <td>{{item.nominalValue}}</td>
+        <td><button>Trade</button></td>
+    </tr>
+    </tbody>
+</table>
+<div class="container"  *ngIf="selectedShareholding">
+<h4>Offers</h4>
+<table class="table table-hover table-sm"  >
+    <thead class="thead-inverse">
+    <tr>
+        <th style="width: 20%">
+           Id
+        </th>
+        <th style="width: 30%">
+            MinimumPrice
+        </th>
+        <th style="width: 30%">
+            Buy Now Price
+        </th>
+        <th style="width: 20%">
+            Status
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let offer of selectedShareholding.offers" >
+        <td>{{offer.id}}</td>
+        <td>{{offer.minimumPrice}}</td>
+        <td >{{offer.buyNowPrice}}</td>
+        <td>{{offer.status}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="container"  *ngIf="selectedShareholding">
+<div> Details of player and performance </div>
+
+<h4>Trade shares in {{selectedShareholding.share.name}}</h4>
+<form>
+        <div>{{errorMessage}}</div>
+  <div class="form-group">
+    <label for="reservePrice">Reservere Price</label>
+    <input class="form-control" [(ngModel)]="offer.minimumPrice" name="minPrice"
+    id="reservePrice" aria-describedby="reserveHelp" placeholder="Enter reserve price">
+    <small id="reserveHelp" class="form-text text-muted">Minumum price you will accept.</small>
+  </div>
+  <div class="form-group">
+    <label for="buyNowPrice">Buy Now Price</label>
+    <input class="form-control" [(ngModel)]="offer.buyNowPrice" name="nowPrice"
+    id="buyNowPrice" aria-describedby="buyNowHelp" placeholder="Enter buy now price">
+    <small id="buyNowHelp" class="form-text text-muted">Amount you will sell for immediately.</small>
+  </div>
+    <button type="submit" (click)="makeOffer()" 
+      class="btn btn-success">Submit</button>
+</form>
+
+
+
+</div>

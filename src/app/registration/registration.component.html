@@ -1,0 +1,108 @@
+
+<div class="container">
+    <h1>SportsEQ</h1>
+<div class="container">Fill in the fields below to register</div>
+    
+    <div>{{errorMessage}}</div>
+    
+    <form #f="ngForm">
+      <div class="form-group"  [ngClass]="{
+        'has-error has-feedback': userName.invalid && (userName.dirty || userName.touched), 
+        'has-success has-feedback': userName.valid && (userName.dirty || userName.touched)
+   }">
+        <label for="userName1">User name</label>
+        <input type="text" 
+        [(ngModel)]="account.accountName" 
+        name="user" 
+        class="form-control"  
+        #userName="ngModel"
+        minlength="8" 
+        required>
+        <span class="glyphicon form-control-feedback"
+        [ngClass]="{
+          'glyphicon-remove': userName.invalid && (userName.dirty || userName.touched), 
+          'glyphicon-ok': userName.valid && (userName.dirty || userName.touched)
+     }">        
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input type="password" [(ngModel)]="account.password" name="pass"
+        class="form-control" id="password1"
+        minlength="8">
+      </div>
+
+      <div class="form-group"
+      [ngClass]="{
+        'has-error has-feedback': firstName.invalid && (firstName.dirty || firstName.touched), 
+        'has-success has-feedback': firstName.valid && (firstName.dirty || firstName.touched)
+   }">
+        <label for="firstName">First Name</label>
+        <input type="text" 
+        [(ngModel)]="account.customer.firstName" 
+        name="first" 
+        class="form-control" 
+        #firstName="ngModel"
+        required
+        minlength="2">
+        <span class="glyphicon form-control-feedback"
+        [ngClass]="{
+          'glyphicon-remove': firstName.invalid && (firstName.dirty || firstName.touched), 
+          'glyphicon-ok': firstName.valid && (firstName.dirty || firstName.touched)
+     }">        
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" [(ngModel)]="account.customer.surname" ngModel name="name" 
+        class="form-control" id="surname" required>
+      </div>
+
+
+     <div class="form-group" 
+     [ngClass]="{
+      'has-error has-feedback': email.invalid && (email.dirty || email.touched), 
+      'has-success has-feedback': email.valid && (email.dirty || email.touched)
+ }">
+        <label for="email">Email Address</label>
+        <input type="email"  class="form-control"
+        [(ngModel)]="account.customer.email" 
+        name="email" 
+        pattern="[^ @]*@[^ @]*" 
+        #email="ngModel" 
+        required>
+        <span class="glyphicon form-control-feedback"
+        [ngClass]="{
+          'glyphicon-remove': email.invalid && (email.dirty || email.touched), 
+          'glyphicon-ok': email.valid && (email.dirty || email.touched)
+     }">        
+        </span>
+        
+      </div>
+      <pre>valid = {{email.valid}} 
+        touched = {{email.touched}} 
+        dirty = {{email.dirty}} 
+      </pre>
+
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input type="text" [(ngModel)]="account.customer.mobileNumber" ngModel name="mobileNumber" 
+        class="form-control" id="mobile" required>
+      </div>
+
+     <div class="form-group">
+     <label for="dateOfBirth">Date of Birth</label> 
+     <input [ngModel]="dob | date:'yyyy-MM-dd'" (ngModelChange)="dob = $event" 
+      type="date" name="dob" id="dateOfBirth"/>
+      </div>
+    
+
+
+      <button type="submit" (click)="registerUser()" 
+      class="btn btn-success">Submit</button>
+
+    </form>
+    <pre>{{f.value | json}}</pre>
+</div>

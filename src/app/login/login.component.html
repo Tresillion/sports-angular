@@ -1,0 +1,45 @@
+
+<div class="container" [hidden]="isLogged">
+    <h1>SportsEQ</h1>
+    <div>{{errorMessage}}</div>
+    <form>
+      <div class="form-group">
+        <label for="name">User name</label>
+        <input type="text" [(ngModel)]="userName" name="user" 
+        class="form-control" id="userName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="password" name="pass"
+        class="form-control" id="password">
+      </div>
+
+      <button type="submit" (click)="login()" 
+      class="btn btn-success">Submit</button>
+
+    </form>
+
+
+
+</div>
+<div class="container" [hidden]="isLogged">
+Not registered? Click <a routerLink="/register" routerLinkActive="active">here</a>.
+</div>
+<!--
+<div class="container" [hidden]="isLogged">
+<h2>You are logged in!</h2>
+
+
+<div>First Name: {{loggedInAccount.customer.firstName}}</div>
+<div>Surname: {{loggedInAccount.customer.surname}}</div>
+<div>Account Type: {{loggedInAccount.accountType}}</div>
+<div>Date Opened: {{loggedInAccount.customer.dateOfBirth}}</div>
+<div>Current Balance: {{loggedInAccount.balance}} </div>
+
+    <ul>
+        <li *ngFor="let share of loggedInAccount.shareholdings">
+         {{share.share.name}} {{share.id}} - {{share.quantity}}
+        </li>
+    </ul>
+</div>-->
