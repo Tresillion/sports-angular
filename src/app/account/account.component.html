@@ -1,14 +1,5 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li  class="active"><a href="javascript:void(0)" >My Account</a></li>
-            <li><a href="javascript:void(0)" routerLink="/home">My Portfolio</a></li>
-            <li ><a href="javascript:void(0)" routerLink="/market">Marketplace</a></li>
-            <li><a href="#">Play</a></li>
-        </ul>
-    </div>
-</nav>
-<div class="container">
+
+<!--<div class="container">
 <h2>My Account</h2>
 <div class="container" *ngIf="loggedInAccount">
 
@@ -19,31 +10,75 @@
         <div>Current Balance: {{loggedInAccount.balance}} </div>
         
 </div>
-
-<div class="container">
-    <h3>Account Top Up</h3>
-    <div>{{errorMessage}}</div>
-    <form>
-      <div class="form-group">
-        <label for="amount">amount</label>
-        <input type="text" [(ngModel)]="payment.amount" name="amount" 
-        class="form-control" id="payAmount" required>
-      </div>
-
-      <div class="form-group">
-        <label for="Ref">Reference</label>
-        <input type="text" [(ngModel)]="payment.referenceId" name="reference"
-        class="form-control" id="ref">
-      </div>
-
-      <button type="submit" (click)="processPayment()" 
-      class="btn btn-success">Submit</button>
-
-    </form>
+-->
 
 
-
+<div class="row">
+    <div class="fixedheader"></div>
+    <div class="fixedheader1"></div>
 </div>
+<!--<div class="row" style='background-image: url("img/loginBg.jpg");height: 567px;'>-->
+<div class="row" style='min-height: 411px;overflow:auto;-webkit-min-logical-height: 469px !important;'>
+    <div class="col-md-12">
+        <div class="bodyContent">
+            <h1 class="modal-title text-center">My Account</h1>
+            <div class ="row loginForm">   
+                <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                    <label class="col-md-6 col-xs-12">First Name</label>
+                    <label class="col-md-6 col-xs-12 detail">{{loggedInAccount.customer.firstName}}</label>
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                    <label class="col-md-6 col-xs-12">Last Name</label>
+                    <label class="col-md-6 col-xs-12 detail">{{loggedInAccount.customer.surname}}</label>
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                    <label class="col-md-6 col-xs-12">Email</label>
+                    <label class="col-md-6 col-xs-12 detail">{{loggedInAccount.customer.email}}</label>
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                    <label class="col-md-6 col-xs-12">User Name</label>
+                    <label class="col-md-6 col-xs-12 detail">{{loggedInAccount.customer.email}}</label>
+                </div>
+                <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                    <label class="col-md-6 col-xs-12">Total Balance</label>
+                    <label class="col-md-6 col-xs-12 detail"><i class="fa fa-eur" aria-hidden="true"></i> {{loggedInAccount.balance}}</label>
+                </div> 
+                <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                    <label class="col-md-6 col-xs-12">Withdrawable Balance</label>
+                    <label class="col-md-6 col-xs-12 detail"><i class="fa fa-eur" aria-hidden="true"></i> {{loggedInAccount.balance}}</label>
+                </div> 		
+            </div>  
+        </div>
+        <div class="bodyContent">
+                
+                <div class ="row loginForm">  
+                        <div>{{errorMessage}}</div>
+                        <form>
+                          <div  class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal">
+                                <h3 class="modal-title text-center">Top Up Account</h3>
+                            </div>
+                          <div  class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                            <label for="amount">amount</label>
+                            <input type="text" [(ngModel)]="payment.amount" name="amount" 
+                            class="form-control" id="payAmount" required>
+                          </div>
+                    
+                          <div  class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                            <label for="Ref">Reference</label>
+                            <input type="text" [(ngModel)]="payment.referenceId" name="reference"
+                            class="form-control" id="ref">
+                          </div>
+                          <div  class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal myaccountBg">
+                          <button type="submit" (click)="processPayment()" 
+                          class="btn btn-default modalLogin col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Submit</button>
+                        </div>
+                        </form>
+                </div>
+
+        </div>    
+    </div> 
+</div> 
 
 
-</div>
+
+

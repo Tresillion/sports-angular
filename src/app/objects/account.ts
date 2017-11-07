@@ -11,6 +11,7 @@ export class Account {
     public opened: Date,
     public customer: Customer,
     public balance: number,
+    public password: string,
     public shareholdings: Shareholding[]
   ) { 
 

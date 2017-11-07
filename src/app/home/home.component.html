@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-default">
+  <!--  <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a href="#">My Account</a></li>
@@ -12,9 +12,9 @@
 <h2>My Portfolio</h2>
 
 </div>
-<div class="container" *ngIf="loggedInAccount">
+<div class="container" *ngIf="loggedInAccount">-->
 <!--<table class="table table-striped" [loggedInAccount.shareholdings]="data" #mf="mfDataTable" [mfRowsOnPage]="5">-->
-<br />
+<!--<br />
 <h4>Shareholdings</h4>
 <table class="table table-hover table-sm"  >
     <thead class="thead-inverse">
@@ -102,3 +102,81 @@
 
 
 </div>
+
+
+-->
+
+
+<div class="row">
+    <div class="fixedheader"></div>
+    <div class="fixedheader1"></div>
+</div>	
+<!--<div class="row" style='background-image: url("img/loginBg.jpg");height: 567px;'>-->
+<div class="row" style='min-height: 515px;overflow:hidden;'>
+    <div class="col-md-12">
+        <div class="bodyContent"  *ngIf="loggedInAccount">
+            <h1 class="modal-title text-center">Athlete Profile</h1>
+            <div class="container-fluid">
+                <div class="table-responsive ">
+                    <table class="table searchPlayerinfo table-bordered leaderBoard"> 
+                        <thead>
+                        <th>Athlete Name</th>
+                        <th>Quantity Owned</th>
+                        <th>Cost Price</th>
+                        <th>Current Market Value</th>
+                        <th>Profit/Loss</th>
+                        <th>Buy/Sell</th>
+                        </thead>
+                        <tr *ngFor="let item of loggedInAccount.shareholdings" (click)="onSelect(item)">
+                            <td class="text-center">
+                                <a data-toggle="modal" data-target="#myModalPlayer" href="#"><img src="img/player/{{item.share.name}}.png" alt="" class="img-responsive protfolio-image"/>
+                                    <span class="athleteName">{{item.share.name}}</span> 
+                                </a></td>
+                            <td><span class="ratings">{{item.quantity}}</span></td>
+                            <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> {{item.share.sharePrice}}</span></td>
+                            <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> {{item.share.sharePrice}}</span></td>
+                            <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> 1.00</span></td>
+                            <td><div class="col-md-5 col-sm-5 col-xs-5 buyBg">
+                                    <span class="rate"><i class="fa fa-eur" aria-hidden="true"></i> 3.84</span><br/>
+                                    <span class="buy">Buy</span>
+                                 </div>
+                                <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1 sellBg">
+                                    <span class="rate"><i class="fa fa-eur" aria-hidden="true"></i> 3.17</span><br/>
+                                    <span class="sell">Sell</span>
+                                </div></td>
+                        </tr>
+ 
+                    </table>
+                </div>
+
+                <div class="container"  *ngIf="selectedShareholding">
+                    <div> Details of player and performance </div>
+                    
+                    <h4>Trade shares in {{selectedShareholding.share.name}}</h4>
+                    <form>
+                            <div>{{errorMessage}}</div>
+                      <div class="form-group">
+                        <label for="reservePrice">Reservere Price</label>
+                        <input class="form-control" [(ngModel)]="offer.minimumPrice" name="minPrice"
+                        id="reservePrice" aria-describedby="reserveHelp" placeholder="Enter reserve price">
+                        <small id="reserveHelp" class="form-text text-muted">Minumum price you will accept.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="buyNowPrice">Buy Now Price</label>
+                        <input class="form-control" [(ngModel)]="offer.buyNowPrice" name="nowPrice"
+                        id="buyNowPrice" aria-describedby="buyNowHelp" placeholder="Enter buy now price">
+                        <small id="buyNowHelp" class="form-text text-muted">Amount you will sell for immediately.</small>
+                      </div>
+                        <button type="submit" (click)="makeOffer()" 
+                          class="btn btn-success">Submit</button>
+                    </form>
+                    
+                    
+                    
+                    </div>
+                    
+
+            </div>
+        </div> 
+    </div>
+</div>  

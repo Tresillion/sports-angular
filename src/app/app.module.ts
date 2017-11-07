@@ -12,6 +12,8 @@ import { TradeService} from './trade/trade.service';
 import { ShareService } from './marketplace/share.service';
 import {MarketplaceComponent} from './marketplace/marketplace.component';
 import {AccountComponent} from './account/account.component';
+import {PlayerComponent} from './player/player.component';
+import {TradeComponent} from './trade/trade.component';
 import {PaymentService} from './account/payment.service';
 
 import { Http} from '@angular/http';
@@ -19,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { routing } from './app.routing';
 import {DataTableModule} from "angular2-datatable";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HomeComponent,
     AccountComponent,
-    MarketplaceComponent
+    PlayerComponent,
+    MarketplaceComponent,
+    TradeComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TradeService,
     ShareService,
     PaymentService,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

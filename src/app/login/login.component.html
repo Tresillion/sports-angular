@@ -1,4 +1,4 @@
-
+<!--
 <div class="container" [hidden]="isLogged">
     <h1>SportsEQ</h1>
     <div>{{errorMessage}}</div>
@@ -19,13 +19,13 @@
       class="btn btn-success">Submit</button>
 
     </form>
-
+  
 
 
 </div>
 <div class="container" [hidden]="isLogged">
 Not registered? Click <a routerLink="/register" routerLinkActive="active">here</a>.
-</div>
+</div> -->
 <!--
 <div class="container" [hidden]="isLogged">
 <h2>You are logged in!</h2>
@@ -43,3 +43,35 @@ Not registered? Click <a routerLink="/register" routerLinkActive="active">here</
         </li>
     </ul>
 </div>-->
+
+<div class="row browserHeight" style='background-color: #0b253d;height: 515px;'>
+  <div class="col-md-12 login" [hidden]="isLogged">
+      <h1 class="modal-title text-center">Login</h1>
+      <div>{{errorMessage}}</div>
+      <form autocomplete="off" id="forgot-password-form" name="forgot-password-form" class="forgotpassword">
+          <div class ="row loginForm">   
+              <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal">
+                  <input id="userName" name="user" [(ngModel)]="userName" name="user"
+                  class="form-control" placeholder="User Name" type="text" required>
+              </div>
+              <div class="form-group col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 elVal">
+                  <input id="password" name="pass" [(ngModel)]="password" class="form-control" 
+                  placeholder="PassWord" type="password" required>
+              </div> 	
+              <div class="form-group col-md-3 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                  <div>
+                      <button type="submit" 
+                      (click)="login()"
+                      class="btn btn-default modalLogin col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">LogIn</button>
+
+                  </div>   
+              </div>
+              <div class="form-group col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                  <div> 
+                      <a routerLink="/register" class="btn btn-default modalLogin col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Registration</a>
+                  </div>   
+              </div> 
+          </div>   
+      </form>
+  </div>
+</div>  

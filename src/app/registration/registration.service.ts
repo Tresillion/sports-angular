@@ -5,13 +5,14 @@ import { Http, Headers, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class RegistrationService {
 
 
-    loginUrl = "http://localhost:8080/login";
-    registerUrl = "http://localhost:8080/register";
+    loginUrl = environment.apiUrl + "login";
+    registerUrl =  environment.apiUrl + "register";
 
     constructor(private http: Http){
     }

@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="fixedheader"></div>
+    <div class="fixedheader1"></div>
+</div>  
+<div class="row"> 
+    <div class="bodyContent">
+        <h1 class="modal-title text-center">The Marketplace</h1>	
+        <div class="col-md-12"  *ngIf="share">	
+            <div class="col-md-5 col-sm-12"> 
+                <div class="col-md-9 col-sm-8 col-sm-12"> 
+                    <div id="curve_charts"></div>
+                </div>
+                <div class="col-md-3 col-sm-3"> 
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="text-center">24 Hour</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">7 Day</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1 Month</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">3 Months</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">6 Months</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1 Year</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="col-md-7 paddingRL0 col-sm-8 col-xs-12">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        <div class="col-md-2 col-sm-2 col-xs-3">
+                            <img src="img/player/{{share.name}}.png" alt="" class="img-responsive protfolio-image"/>
+                        </div>
+                        <div class="col-md-1 col-sm-2 col-xs-1">
+                            <span class="ratings">7</span>
+                        </div>
+                        <div class="col-md-7 col-sm-5 col-xs-4">
+                            <span class="name">{{share.name}}</span><br/>
+                            <span class="place">Everton</span>
+                        </div>
+                    </a>
+                    <div class="col-md-2 col-sm-2 col-xs-3 text-cener buyBg">
+                        <span class="rate"><i class="fa fa-eur" aria-hidden="true"></i> {{share.sharePrice}}</span><br/>
+                        <span class="buy">Buy</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-1 col-sm-4  col-xs-12">
+                    <div class="col-md-5 col-sm-5 col-xs-5 buyBg">
+                        <span class="rate"><i class="fa fa-eur" aria-hidden="true"></i> 3.84</span><br/>
+                        <span class="buy">Buy</span>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1 sellBg">
+                        <span class="rate"><i class="fa fa-eur" aria-hidden="true"></i> 3.17</span><br/>
+                        <span class="sell">Sell</span>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        <div class="col-md-12 col-sm-12 table-responsive paddingR0">
+            <table class="table searchPlayerinfo"> 
+                <thead>
+                <th>Quantity</th>
+                <th>Minimum Price</th>
+                <th>Buy Now Price</th>
+                <th>Time Remaining</th>
+                <th>Highest Offer</th>
+                <th>&nbsp;</th>
+                </thead>
+                <!--
+                <tr>
+                    <td class="col-md-2">
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <img src="img/player/chrismartin.jpg" alt="" class="img-responsive protfolio-image"/>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span class="ratings">7</span>
+                        </div></td>
+                    <td><a data-toggle="modal" data-target="#myModalPlayer" href="#"><span class="name">Chris Martin</span><br/>
+                            <span class="place">Everton</span></a></td>
+                    <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> 2.91</span></td>
+                    <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> 3.00</span></td>
+                    <td><span class="searchIn">0:00:45</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <img src="img/player/chrismartin.jpg" alt="" class="img-responsive protfolio-image"/>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span class="ratings">7</span>
+                        </div></td>
+                    <td><a data-toggle="modal" data-target="#myModalPlayer" href="#"><span class="name">Chris Martin</span><br/>
+                            <span class="place">Everton</span></a></td>
+                    <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> 2.91</span></td>
+                    <td><span class="searchIn"><i class="fa fa-eur" aria-hidden="true"></i> 3.00</span></td>
+                    <td><span class="searchIn">0:10:45</span></td>
+                </tr>
+            -->
+            <tr *ngFor="let offer of offers" >
+                <td class="col-md-2">{{offer.quantity}}</td>
+                <td>{{offer.minimumPrice}}</td>
+                <td>{{offer.buyNowPrice}}</td>
+                <td>{{ offer.offerEndDate | date:'dd-MM-yy' }}</td>
+                <td>{{offer.highestOffer}}</td>
+                <td><button type="submit" class="btn btn-success" (click)="buyNow(offer)">Buy Now</button> </td>
+            </tr>
+            </table>	
+        </div>
+    </div> 
+</div>

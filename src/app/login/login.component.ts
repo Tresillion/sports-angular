@@ -19,14 +19,12 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router) {
     this.isLogged = false;
-    alert("Here construct"); 
   }
 
   ngOnInit() {
     this.loggedInAccount = null;//new Account(1,"","","",1,new Date());
     this.loginService.logout();
-    
-    alert("Here init");
+
 
   }
 

@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-default">
+   <!-- <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a href="javascript:void(0)" routerLink="/payment">My Account</a></li>
@@ -7,7 +7,7 @@
                 <li><a href="#">Play</a></li>
             </ul>
         </div>
-    </nav>
+    </nav>--><!--
 <div class="container">
 <h2>Marketplacex</h2>
 <table class="table table-hover table-sm"  >
@@ -69,7 +69,7 @@
 </table>    
 </div>
 <div class="container"  *ngIf="selectedOffer">
-
+-->
 <!--
 <h4>Bid for  {{selectedShare.name}}</h4>
 <form>
@@ -84,6 +84,170 @@
           <button type="submit" 
       class="btn btn-success">Buy Now</button>
 </form>-->
+<!--</div>-->
+<div class="row">
+    <div class="fixedheader"></div>
+    <div class="fixedheader1"></div>
+</div> 
+<div class="row">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> 
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse customeNav" id="navbar-collapse-2">
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+</div>				
+
+<div class="row"  style='background-image: url("img/loginBg2.jpg");'> 
+    <div class="bodyContent">
+        <div class="col-md-12">	
+            <div class="col-md-5 col-sm-6 col-xs-12"> 
+                <div style='background-color:rgba(0,0,0,0.7);min-height:327px;-webkit-min-logical-height: 385px !important;margin-top:10px;overflow:hidden'> 							
+                    <div class="col-md-12 col-sm-12">
+                        <h4 class="marketTitle padding0">Search by Name</h4>
+                        <br/> 
+                        <div class="input-group">
+                            <input type="text" class="form-control inputBg" 
+                            [(ngModel)]="playerName" placeholder="Search Player...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary searchPlayer inputBg"
+                                (click)="search()" type="button"><i class="fa fa-user-circle" aria-hidden="true"></i></button>
+                            </span>
+                        </div>
+                        <br/> 
+                        <h4 class="marketTitle padding0">Pricing</h4>
+                        <br/> 
+                        <div class="col-md-6 col-sm-12 marginT5">
+                            <label class="white">Min.Price</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12 marginT5"> 
+                            <input type='button' value='-' class='qtyminus inputBg' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty inputBg' />
+                            <input type='button' value='+' class='qtyplus inputBg' field='quantity' />
+                        </div>  
+                        <div class="col-md-6 col-sm-12 marginT5 marginB10">
+                            <label class="white">Max.Price</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12 marginT5 marginB10"> 
+                            <input type='button' value='-' class='qtyminus inputBg' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty inputBg' />
+                            <input type='button' value='+' class='qtyplus inputBg' field='quantity' />
+                        </div>	 
+                        <div class="col-md-6 col-sm-12 marginT5">
+                            <label class="white">Buy Now Min</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12 marginT5"> 
+                            <input type='button' value='-' class='qtyminus inputBg' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty inputBg' />
+                            <input type='button' value='+' class='qtyplus inputBg' field='quantity' />
+                        </div> 
+                        <div class="col-md-6 col-sm-12 marginT5 marginB5">
+                            <label class="white">Buy Now Max</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12 marginT5 marginB5"> 
+                            <input type='button' value='-' class='qtyminus inputBg' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty inputBg' />
+                            <input type='button' value='+' class='qtyplus inputBg' field='quantity' />
+                        </div>							
+                    </div>
+
+                </div> 
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn seacrhBtn col-md-5 col-sm-5 col-xs-12">RESET</button>
+                    <span class="col-md-2 col-sm-2 col-xs-12">&nbsp;</span>
+                    <a href="searchPage.html" class="btn seacrhBtn col-md-5 col-sm-5 col-xs-12">SEARCH</a>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-sm-6 col-xs-12 paddingRL0">
+               <!-- <div class="col-md-4 col-sm-6">
+                    <div class="marketSupBg">
+                        <a href="#">
+                            <h4 class="marketTitle">Qulatiy</h4>
+                            <div id="diamond"><p>fut <br/>17</p></div>
+                        </a>	 
+                        <select class="marketSelect">
+                            <option>Select</option>
+                            <option value="Gold">Gold</option> 
+                        </select>
+                    </div> 
+                </div>-->
+                <div class="col-md-5 col-md-offset-1 col-sm-6"> 
+                    <div class="marketSupBg">
+                        <a href="#">
+                            <h4 class="marketTitle">Position</h4>	
+                            <img src="img/soccer.png" alt="" class="img-responsive marketImg"/>
+                        </a>	
+                        <select class="marketSelect">
+                            <option>Select</option>
+                            <option value="defenders">Defenders</option> 
+                        </select>
+                    </div> 
+                </div>
+               <!-- <div class="col-md-4 col-sm-6">  
+                    <div class="marketSupBg"> 
+                        <a href="#">
+                            <h4 class="marketTitle">Chemistry Style</h4>
+                            <img src="img/chemistry.png" alt="" class="img-responsive marketImg"/>
+                        </a>	
+                        <select class="marketSelect">
+                            <option>Select</option>
+                            <option value="any">Any</option>
+                        </select>
+
+                    </div>   
+                </div> -->
+                <div class="col-md-5 col-sm-6"> 
+                    <div class="marketSupBg">
+                        <a href="#">
+                            <h4 class="marketTitle">Nationality</h4>
+                            <img src="img/nationality.png" alt="" class="img-responsive marketImg"/>
+                        </a>	
+                        <select class="marketSelect">
+                            <option>Select</option>
+                            <option value="any">Any</option> 
+                        </select>
+                    </div> 
+                </div>
+                <div class="col-md-5 col-md-offset-1 col-sm-6"> 
+                    <div class="marketSupBg">
+                        <a href="#">
+                            <h4 class="marketTitle">Leaque</h4>
+                            <img src="img/premierLeagu.png" alt="" class="img-responsive marketImg"/>
+                        </a>	
+                        <select class="marketSelect">
+                            <option>Select</option>
+                            <option value="premierLeaque">Premier Leaque</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="col-md-5 col-sm-6">  
+                    <div class="marketSupBg"> 
+                        <a href="#">
+                            <h4 class="marketTitle">Club</h4>
+                            <img src="img/club.png" alt="" class="img-responsive marketImg"/>
+                        </a>	
+                        <select class="marketSelect">
+                            <option>Select</option>	
+                            <option value="club">Club</option> 
+                        </select>
+                    </div>   
+                </div>
+            </div> 
+        </div> 
+    </div> 
 </div>
 
 

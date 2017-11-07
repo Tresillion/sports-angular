@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   errorMessage : string ;
 
   account : Account;
+  password : string;
 
   dob : Date;
 
@@ -22,7 +23,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
      this.errorMessage = "";
-     this.account = new Account(0,"",1,null,null,0,null);
+     this.account = new Account(0,"",1,null,null,0,"",null);
      let customer = new Customer(0,"","","","",null);
      this.account.customer =customer;
   }

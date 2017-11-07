@@ -4,14 +4,15 @@ import { Http, Headers, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class LoginService {
 
 
-    loginUrl = "http://localhost:8080/userLogin";
+    loginUrl = environment.apiUrl + "userLogin";
 
-    accountUrl = "http://localhost:8080/account?userName=";
+    accountUrl = environment.apiUrl + "account?userName=";
 
     constructor(private http: Http){
     }

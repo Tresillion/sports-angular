@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {AccountComponent } from './account/account.component';
+import {PlayerComponent } from './player/player.component';
 
 const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -11,9 +12,9 @@ const appRoutes: Routes = [
     {path: 'market', component: MarketplaceComponent},
     {path: 'register', component: RegistrationComponent},
     {path: 'account', component: AccountComponent},
-
+    {path: 'player/:id', component: PlayerComponent},
     //otherwise go to home
-    {path:'**', redirectTo: 'account'  }
+    {path:'**', redirectTo: 'login'  }
 
 ]
 

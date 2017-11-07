@@ -5,14 +5,15 @@ import { Http, Headers, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
+import {environment} from "../../environments/environment";
 
 
 @Injectable()
 export class TradeService {
 
 
-    loginUrl = "http://localhost:8080/offer";
-    buyNowUrl = "http://localhost:8080/buyNow";
+    loginUrl = environment.apiUrl + "offer";
+    buyNowUrl = environment.apiUrl + "buyNow";
 
     constructor(private http: Http){
     }

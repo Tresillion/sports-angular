@@ -34,6 +34,8 @@ export class MarketplaceComponent implements OnInit {
     offers : Offer[];
     selectedOffer : Offer;
 
+    playerName : string;
+
     constructor(private shareService: ShareService, 
          private loginService: LoginService,
          private tradeService: TradeService,
@@ -43,8 +45,22 @@ export class MarketplaceComponent implements OnInit {
     ngOnInit() {
         this.selectedShare = null; 
 
-        this.shareService.getShares().subscribe(
-        (theShares) =>  this.shares = theShares)
+        //this.shareService.getShares().subscribe(
+        //(theShares) =>  this.shares = theShares)
+    }
+
+
+    search() {
+
+        alert("searching for " + this.playerName);
+        this.shareService.getShareByName(this.playerName).subscribe(
+            (theShares) => { this.shares = theShares;
+             this.router.navigate(['player',this.shares[0].id]);
+            })
+
+
+  
+
     }
 
 
